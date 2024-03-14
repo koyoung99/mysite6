@@ -30,9 +30,7 @@ public class GuestService {
 		return count;
 
 	}
-	
-	
-	
+
 	// 삭제
 	public int exeDelete(GuestVo guestVo) {
 		System.out.println("exeDelete");
@@ -40,5 +38,17 @@ public class GuestService {
 		int count = guestDao.guestDelete(guestVo);
 
 		return count;
+	}
+
+	// ajax등록 저장
+	public GuestVo exeAddandGuest(GuestVo guestVo) {
+		System.out.println("GuestbookService.exeAddandGuest()");
+
+		// 저장
+		guestDao.insertSelectKey(guestVo);
+
+		// 1명데이터 데이터 가져오기
+		GuestVo gVo = guestDao.guestSelectOne(guestVo.getNo());
+		return gVo;
 	}
 }

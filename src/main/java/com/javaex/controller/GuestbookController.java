@@ -68,6 +68,6 @@ public class GuestbookController {
 		public String ajaxIndex() {
 			System.out.println("GuestController.ajaxIndex()");
 
-			return "ajaxindex";
+			return "guestbook/ajaxindex";
 		}
 }
